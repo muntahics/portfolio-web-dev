@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md Muntahi Hossain – Portfolio</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --bg: #f9fafb;
+      --text: #111827;
+      --secondary: #6b7280;
+      --light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about, .skills, .testimonials {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--secondary);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skills-list span {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+
+    .repo-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .repo {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .repo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .repo h3 {
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .repo p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #362c5c;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #3730a3;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial small {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #3730a3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muntahi Chowdhury</h1>
+    <p>Computer Science Student | Web Developer</p>
+    <a href="https://drive.google.com/file/d/1OhHPvQ8mDryVFsAWp9zbS1NPuiPfGE8u/view?usp=sharing" target="_blank" class="btn">Download CV</a>
+  </header>
+
+  <section>
+    <h2 class="section-title">About Me</h2>
+    <p class="about">
+      I am a B.Sc Computer Science student at the University of East London. I am passionate about web development and love building interactive, user-friendly web applications using modern technologies like React.js, PHP Laravel.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React.js</span>
+      <span>PHP</span>
+      <span>Laravel</span>
+      <span>Git & GitHub</span>
+      <span>Responsive Design</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">My GitHub Projects</h2>
+    <div class="repo-list" id="repos">
+      <!-- Repos will be injected here -->
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Muntahi is a quick learner and has a great passion for web technologies."</p>
+        <small>– Instructor, UEL</small>
+      </div>
+      <div class="testimonial">
+        <p>"Always ready to take on new challenges and build creative solutions."</p>
+        <small>– Peer Developer</small>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Contact Me</h2>
+    <form action="https://formspree.io/f/xgvypwyp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Md Muntahi Hossain. All rights reserved.
+  </footer>
+
+  <script>
+    const username = "muntahics";
+    const repoContainer = document.getElementById("repos");
+
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+      .then(res => res.json())
+      .then(repos => {
+        const reactRepos = repos.filter(repo =>
+          repo.name.toLowerCase().includes("react") ||
+          repo.language === "JavaScript"
+        );
+
+        reactRepos.forEach(repo => {
+          const div = document.createElement("div");
+          div.className = "repo";
+          div.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description provided."}</p>
+            <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+          `;
+          repoContainer.appendChild(div);
+        });
+      })
+      .catch(err => {
+        repoContainer.innerHTML = "<p>Could not load repositories. Please try again later.</p>";
+      });
+  </script>
+</body>
+</html>
